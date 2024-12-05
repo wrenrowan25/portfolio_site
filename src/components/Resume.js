@@ -8,14 +8,14 @@ function Resume() {
       <div class="resume-card">
         <h3>Wren Rowan</h3>
         <div class="popular-tags">
-            <button><a href="https://www.linkedin.com/in/wren-rowan/" target="_blank">LinkedIn</a></button> 
-            <button><a href="https://github.com/wrenrowan25" target="_blank">Github</a></button>
+            <button><a href="https://www.linkedin.com/in/wren-rowan/" target="_blank" rel="noopener noreferrer">LinkedIn</a></button> 
+            <button><a href="https://github.com/wrenrowan25" target="_blank" rel="noopener noreferrer">Github</a></button>
         </div>
         <div>
           <p>Student IT Service Desk Manager at SUNY Cobleskill - College of Agriculture and Technology</p>
           <p>Cobleskill, New York, United States</p>
         </div>
-        <img src={profilePicture} alt="Wren Rowan Profile Picture"></img>
+        <img src={profilePicture} alt="Wren Rowan"></img>
       </div>
       <div class="resume-card">
         <h3>Professional Experience</h3>

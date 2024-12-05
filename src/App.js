@@ -11,11 +11,22 @@ import "./App.css";
 function App() {
   const [activeTab, setActiveTab] = useState("web");
   const [selectedProject, setSelectedProject] = useState(null);
+  const [isExpandedViewVisible, setExpandedViewVisible] = useState(false);
   const [showIntro, setShowIntro] = useState(true);
   const [activeTags, setActiveTags] = useState([]);
 
   const closeIntro = () => {
     setShowIntro(false);
+  };
+
+  const openExpandedView = (project) => {
+    setSelectedProject(project);
+    setTimeout(() => setExpandedViewVisible(true), 10); // Trigger fade-in animation
+  };
+
+  const closeExpandedView = () => {
+    setExpandedViewVisible(false);
+    setTimeout(() => setSelectedProject(null), 300); // Wait for fade-out animation to complete
   };
 
   // Filter projects based on active tags
@@ -59,7 +70,7 @@ function App() {
                     key={project.id}
                     project={project}
                     searchTags={activeTags}
-                    setSelectedProject={setSelectedProject} // Set the selected project here
+                    onClick={() => openExpandedView(project)} // Use onClick for consistency
                   />
                 ))}
             </div>
@@ -69,7 +80,8 @@ function App() {
           {selectedProject && (
             <ExpandedView
               project={selectedProject} // Pass the selected project to ExpandedView
-              closeView={() => setSelectedProject(null)} // Clear selected project on close
+              isVisible={isExpandedViewVisible} // Control visibility for animation
+              closeView={closeExpandedView} // Handle close functionality
             />
           )}
         </>
