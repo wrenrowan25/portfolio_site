@@ -1,5 +1,6 @@
 import React from "react";
 import "./../App.css";
+import placeholderIMG from "../images/placeholder.png"
 
 function ProjectCard({ project, searchTags, setSelectedProject }) {
   const highlightedTags = project.tags.map((tag) =>
@@ -10,7 +11,7 @@ function ProjectCard({ project, searchTags, setSelectedProject }) {
 
   return (
     <div className="project-card" onClick={() => setSelectedProject(project)}>
-      <img src="./images/placeholder.png" alt={project.title} className="project-image" /> 
+      <img src={placeholderIMG} alt={project.title} className="project-image" /> 
       <h3 className="project-title">{project.title}</h3>
       <div className="project-tags">{highlightedTags}</div>
       <p className="project-description">{project.description}</p>
