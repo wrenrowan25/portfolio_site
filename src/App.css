@@ -1,0 +1,403 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f9;
+  color: #333;
+}
+
+/* INTRO POPUP */
+
+.intro-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to right, #4facfe, #00f2fe);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.intro-content {
+  text-align: left;
+  margin-bottom: 20px;
+}
+
+.intro-content h1 {
+  font-size: 22pt;
+  margin-bottom: 10px;
+}
+
+.intro-content p {
+  font-size: 14pt;
+  max-width: 600px;
+}
+
+.intro-button {
+  background: #ff7e5f;
+  color: white;
+  padding: 15px 30px;
+  font-size: 1.2rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.intro-button:hover {
+  background: #ff6b4a;
+}
+
+.intro-button:focus {
+  outline: none;
+}
+
+/* NAVIGATION BAR */
+.navbar {
+  background-color: #222;
+  color: white;
+  padding: 10px;
+  display: flex;
+  justify-content: center; /* Center content for desktop/tablet views */
+  position: relative;
+}
+
+.navbar-content {
+  width: 100%;
+  max-width: 1200px; /* Limit the maximum width of the navbar */
+  display: flex;
+  justify-content: center; /* Center tabs inside the wrapper */
+  align-items: center;
+  position: relative;
+}
+
+.hamburger {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1.5rem;
+  cursor: pointer;
+  display: none; /* Hidden by default */
+  position: absolute;
+  left: 10px; /* Left-align the hamburger menu */
+}
+
+/*NAV TABS */
+.nav-tabs {
+  display: flex;
+  gap: 10px;
+}
+
+.nav-button {
+  padding: 10px 20px;
+  color: white;
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.nav-button.active {
+  border-bottom: 2px solid #00bcd4;
+}
+
+.nav-button:hover {
+  background: #444;
+}
+
+/*SEARCH BAR*/
+.search-bar {
+  margin: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.search-input input {
+  width: 100%;
+  max-width: 500px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.popular-tags {
+  margin-top: 10px;
+}
+
+.popular-tags button {
+  margin: 5px;
+  padding: 5px 10px;
+  border: none;
+  background: #00bcd4;
+  color: white;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.popular-tags button:hover {
+  background: #0097a7;
+}
+
+.active-tags {
+  margin-top: 15px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.active-tag {
+  background: #e0e0e0;
+  margin: 5px;
+  padding: 5px 10px;
+  border-radius: 3px;
+  display: flex;
+  align-items: center;
+}
+
+.active-tag span {
+  margin-left: 5px;
+  cursor: pointer;
+}
+
+.project-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  justify-content: center;
+  margin: 10px 0;
+  color: #666;
+}
+
+.project-tags .highlight {
+  color: #007bff;
+  font-weight: bold;
+}
+
+/* PROJECT GRID */
+
+.project-grid {
+  display: flex;
+  flex-direction: column; /* Stack cards vertically */
+  gap: 20px; /* Add space between cards */
+  padding: 20px;
+  max-width: 1000px;
+  margin: 0 auto; /* Center grid on larger screens */
+}
+
+/* PROJECT CARD */
+
+.project-card {
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.3s;
+  width: 100%; /* Make card take full width */
+  max-width: 1000px; /* Limit card width for larger screens */
+  margin: 0 auto; /* Center card within grid */
+}
+
+.project-card:hover {
+  transform: scale(1.02);
+}
+
+.project-image {
+  width: 100%;
+  height: auto;
+}
+
+.project-title {
+  font-size: 24px;
+  margin: 15px 0;
+}
+
+.project-description {
+  font-size: 16px;
+  color: #666;
+  padding: 0 20px; /* Add padding for better readability */
+}
+
+/* EXPANDED VIEW */
+
+.expanded-view {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: white;
+  z-index: 1000;
+  overflow-y: auto;
+}
+
+.top-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #222;
+  color: white;
+  padding: 10px 20px;
+}
+
+.close-button {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.expanded-tabs {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+.expanded-tabs button {
+  margin: 0 10px;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+}
+
+.expanded-tabs button.active {
+  border-bottom: 2px solid #00bcd4;
+}
+
+.expanded-content {
+  padding: 20px;
+}
+
+/*RESUME SECTION*/
+.resume-card {
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 20px;
+  text-align: left;
+  transition: box-shadow 0.3s;
+}
+
+.resume-card:hover {
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.resume-card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+}
+
+.resume-card h4 {
+  font-size: 1.25rem;
+  margin-bottom: 10px;
+}
+
+.resume-card p {
+  font-size: 1rem;
+  margin-bottom: 10px;
+}
+
+.resume-card ul {
+  list-style-type: disc;
+  padding-left: 20px;
+}
+
+.resume-card ul li {
+  margin-bottom: 5px;
+}
+
+/* RESPONSIVE DESIGN */
+
+@media (max-width: 768px) {
+  .intro-content h1 {
+    font-size: 2rem;
+  }
+
+  .intro-content p {
+    font-size: 1.2rem;
+  }
+
+  .intro-button {
+    padding: 10px 20px;
+    font-size: 1rem;
+  }
+
+  .project-grid {
+    padding: 10px;
+  }
+
+  .project-card {
+    font-size: 16px;
+  }
+
+  .project-title {
+    font-size: 16px;
+  }
+
+  .project-description {
+    font-size: 12px;
+  }
+
+  .hamburger {
+    display: block; /* Show hamburger menu */
+  }
+
+  .navbar {
+    height: 40px;
+  }
+
+  .nav-tabs {
+    flex-direction: column;
+    position: absolute;
+    top: 50px;
+    left: 0;
+    width: 100%;
+    background: #333;
+    display: none; /* Hidden by default */
+  }
+
+  .nav-tabs.open {
+    display: flex; /* Show menu when open */
+  }
+
+  .nav-button {
+    text-align: left;
+    padding: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .intro-content h1 {
+    font-size: 16pt;
+  }
+
+  .intro-content p {
+    font-size: 12pt;
+  }
+
+  .intro-button {
+    padding: 10px 15px;
+    font-size: 0.9rem;
+  }
+
+  .project-card {
+    font-size: 14px;
+  }
+
+  .project-title {
+    font-size: 14px;
+  }
+
+  .project-description {
+    font-size: 11px;
+  }
+}
