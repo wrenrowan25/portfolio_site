@@ -172,7 +172,7 @@ ul, ol {
 }
 
 li {
-  color: #555;
+  color: var(--paragraph-color);
   font-size: 1rem;
   margin: 0.5em 0;
 }
@@ -180,7 +180,7 @@ li {
 /* BLOCKQUOTE */
 blockquote {
   border-left: 4px solid #ddd;
-  color: #555;
+  color: var(--paragraph-color);
   font-size: 1.25rem;
   font-style: italic;
   margin: 0 0 1em;
