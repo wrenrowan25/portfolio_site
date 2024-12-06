@@ -14,7 +14,7 @@ function Resume() {
           <p>Student IT Service Desk Manager at SUNY Cobleskill - College of Agriculture and Technology</p>
           <p>Cobleskill, New York, United States</p>
         </div>
-        <img src={profilePicture} alt="Wren Rowan"></img>
+        <img className="profile-picture" src={profilePicture} alt="Wren Rowan"></img>
       </div>
       <div className="resume-card">
         <h3>Professional Experience</h3>

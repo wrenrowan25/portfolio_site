@@ -1,6 +1,6 @@
 /* LIGHT MODE */
 :root {
-  --background-color: #f4f4f9;
+  --background-color: #F4F2EE;
   --button-bg: #00bcd4;
   --button-hover-bg: #0097a7;
   --heading-color: #222;
@@ -315,19 +315,41 @@ textarea {
 /* SEARCH BAR */
 .search-bar {
   align-items: center;
+  background: var(--expanded-bg);
+  border-radius: 8px;
+  border: 1px solid var(--expanded-border);
+  box-sizing: border-box;
+  cursor: pointer;
   display: flex;
-  flex-wrap: wrap; /* Allow wrapping of child elements */
-  gap: 20px; 
-  justify-content: center; /* Center all elements */
-  margin: 20px 0 5px 0;
+  flex-direction: column;
+  justify-content: left;
+  margin: 0 auto; /* Center card within grid */
+  margin-top: 40px;
+  margin-bottom: 0px;
+  max-width: 1000px; /* Limit card width for larger screens */
+  padding: 10px 15px 0px 15px;
+  overflow: hidden;
+  transition: transform 0.3s;
+  width: 100%; /* Make card take full width */
+}
+
+.search-top{
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+  align-items: center;
+  gap: 20px;
+  width: 100%;
+  margin-bottom: 10px;
 }
 
 .search-input {
   background: var(--search-bg);
   display: flex;
-  flex: 1;
+  height: 40px;
   justify-content: center;
   max-width: 500px;
+  width: 45%;
 }
 
 .search-input input {
@@ -344,40 +366,28 @@ textarea {
     border-color: #00bcd4;
 }
 
-/* Popular Tags */
-.popular-tags button,
-.active-tag {
+/*TAGS*/
+.tag-container{
+  width: 50%;
+}
+
+.popular-tags, .active-tags {
+  box-sizing: border-box;
   align-items: center;
   display: flex;
   flex-wrap: wrap; 
   gap: 10px; /* Space between tags */
   justify-content: center; 
-  margin-bottom: 20px; 
+}
+
+.popular-tags button, .active-tag{
   padding: 5px 10px;
-}
-
-.popular-tags {
-  align-items: center;
-  display: flex;
-  flex-wrap: wrap; 
-  gap: 10px; /* Space between tags */
-  justify-content: center; 
-}
-
-/* Active Tags */
-.active-tags {
-  box-sizing: border-box; /* Ensure padding doesn't affect height */
-  display: flex;
-  flex-wrap: wrap; /* Allow active tags to wrap */
-  gap: 10px; /* Space between tags */
-  justify-content: center; /* Center tags horizontally */
-  min-height: 30px; /* Reserve space for active tags */
-  width: 100%; /* Ensure active tags span the full width */
 }
 
 .active-tag{
   background-color: var(--tag-active-bg);
   color: var(--tag-color);
+  margin: 0px 0px 20px 0px;
 }
 
 .active-tag:hover{
@@ -554,6 +564,14 @@ textarea {
 
 .resume-card ul li {
   margin-bottom: 5px;
+}
+
+.profile-picture {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%; /* Makes the image circular */
+  border: 5px solid white; /* White border */
+  object-fit: cover; /* Ensures the image fits perfectly within the circle */
 }
 
 /* RESPONSIVE DESIGN */
