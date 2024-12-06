@@ -76,6 +76,10 @@ body {
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
+footer {
+  height: 300px;
+}
+
 /* BUTTON */
 button {
   background-color: var(--button-bg);
@@ -529,12 +533,12 @@ textarea {
   background: var(--resume-bg);
   border-radius: 8px;
   border: 1px solid var(--resume-border);
-  margin-top: 20px;
   margin: 0 auto; /* Center card within grid */
+  margin-top: 20px;
   max-width: 1000px; /* Limit card width for larger screens */
   overflow: hidden;
   padding: 40px; 
-  text-align: center;
+  text-align: left;
   text-decoration: none;
   transition: transform 0.3s;
   width: 100%; /* Make card take full width */
