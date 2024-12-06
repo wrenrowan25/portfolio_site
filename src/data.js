@@ -1,7 +1,7 @@
 import placeholder1 from "./images/placeholder1.png";
 import placeholder2 from "./images/placeholder2.png";
 import placeholder3 from "./images/placeholder3.png";
-import placeholdervideo from "./videos/placeholder.mkv";
+import placeholdervideo from "./videos/placeholder.mp4";
 
 export const projects = [
   {

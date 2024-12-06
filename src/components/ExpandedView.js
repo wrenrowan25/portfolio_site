@@ -1,9 +1,20 @@
 import React, { useState } from "react";
+import { useParams, useNavigate } from "react-router-dom";
 import "./../App.css";
 
-function ExpandedView({ project, closeView, isVisible }) {
+function ExpandedView({ projects }) {
+  const { id } = useParams(); // Get the project ID from the URL
+  const navigate = useNavigate(); // For navigation to previous page or other routes
+  const project = projects.find((proj) => proj.id === parseInt(id, 10)); // Find the project by ID
+
+  // Always declare hooks unconditionally at the top level
   const [activeTab, setActiveTab] = useState("description");
   const [currentImage, setCurrentImage] = useState(0);
+
+  // If the project is not found, return an error message within the JSX
+  if (!project) {
+    return <div>Project not found</div>;
+  }
 
   const handleNextImage = () => {
     setCurrentImage((prev) => (prev + 1 > project.images.length - 1 ? 0 : prev + 1));
@@ -14,10 +25,10 @@ function ExpandedView({ project, closeView, isVisible }) {
   };
 
   return (
-    <div className={`expanded-view ${isVisible ? "visible" : "hidden"}`}>
+    <div className="expanded-view visible">
       <div className="top-bar">
         <h2>{project.title}</h2>
-        <button className="close-button" onClick={closeView}>
+        <button className="close-button" onClick={() => navigate(-1)}>
           X
         </button>
       </div>
@@ -71,7 +82,7 @@ function ExpandedView({ project, closeView, isVisible }) {
           <div>
             {project.video ? (
               <video controls width="100%">
-                <source src={project.video} type="video/x-matroska" />
+                <source src={project.video} type="video/mp4"/>
                 Your browser does not support the video tag.
               </video>
             ) : (

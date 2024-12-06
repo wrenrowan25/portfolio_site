@@ -110,24 +110,37 @@ body {
   background: #444;
 }
 
-/*SEARCH BAR*/
+/* SEARCH BAR */
 .search-bar {
   margin: 20px;
   display: flex;
-  flex-direction: column;
+  flex-wrap: wrap; /* Allow wrapping of child elements */
+  justify-content: center; /* Center all elements */
+  gap: 10px; /* Space between rows and elements */
   align-items: center;
+}
+
+.search-input {
+  flex: 1;
+  max-width: 500px;
+  display: flex;
+  justify-content: center;
 }
 
 .search-input input {
   width: 100%;
-  max-width: 500px;
   padding: 10px;
   border: 1px solid #ddd;
   border-radius: 5px;
 }
 
+/* Popular Tags */
 .popular-tags {
-  margin-top: 10px;
+  display: flex;
+  flex-wrap: wrap; /* Allow wrapping of popular tags */
+  justify-content: center; /* Center tags horizontally */
+  gap: 10px; /* Space between tags */
+  align-items: center;
 }
 
 .popular-tags button {
@@ -141,47 +154,48 @@ body {
   transition: background 0.3s;
 }
 
-.popular-tags button a{
-  color: white;
-  text-decoration: none;
-}
-
 .popular-tags button:hover {
   background: #0097a7;
 }
 
+.popular-tags button.active {
+  background: #007bff;
+  font-weight: bold;
+}
+
+/* Active Tags */
 .active-tags {
+  width: 100%; /* Ensure active tags span the full width */
   margin-top: 15px;
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: wrap; /* Allow active tags to wrap */
+  justify-content: center; /* Center tags horizontally */
+  gap: 10px; /* Space between tags */
+  min-height: 40px; /* Reserve space for active tags */
+  box-sizing: border-box; /* Ensure padding doesn't affect height */
 }
 
 .active-tag {
-  background: #e0e0e0;
+  background: #e0e0e0; /* Same color scheme */
   margin: 5px;
-  padding: 5px 10px;
-  border-radius: 3px;
+  padding: 5px 10px; /* Match the padding of popular tags */
+  border-radius: 3px; /* Match the rounded corners of popular tags */
   display: flex;
   align-items: center;
+  font-size: 0.9rem; /* Match size to popular tags */
+  color: #333; /* Default text color */
 }
 
 .active-tag span {
   margin-left: 5px;
+  color: #ff6b4a; /* Color for the X button */
   cursor: pointer;
-}
-
-.project-tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 5px;
-  justify-content: center;
-  margin: 10px 0;
-  color: #666;
-}
-
-.project-tags .highlight {
-  color: #007bff;
   font-weight: bold;
+  transition: color 0.3s;
+}
+
+.active-tag span:hover {
+  color: #ff5733; /* Hover effect for the X button */
 }
 
 /* PROJECT GRID */
@@ -415,9 +429,17 @@ body {
     display: flex; /* Show menu when open */
   }
 
-  .nav-button {
-    text-align: left;
-    padding: 15px;
+  .search-bar {
+    flex-direction: column; /* Stack elements vertically in mobile view */
+    align-items: center;
+  }
+
+  .popular-tags {
+    justify-content: center;
+  }
+
+  .active-tags {
+    min-height: 60px; /* Slightly more space for mobile layouts */
   }
 }
 
