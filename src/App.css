@@ -1,11 +1,197 @@
-body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-  background-color: #f4f4f9;
-  color: #333;
+/* LIGHT MODE */
+:root {
+  --background-color: #f4f4f9;
+  --text-color: #333;
+  --button-bg: #00bcd4;
+  --button-hover-bg: #0097a7;
+  --heading-color: #222;
+  --paragraph-color: #666;
 }
 
+/* DARK MODE */
+[data-theme="dark"] {
+  --background-color: #222;
+  --text-color: #f4f4f9;
+  --button-bg: #555;
+  --button-hover-bg: #444;
+  --heading-color: #f4f4f9;
+  --paragraph-color: #ddd;
+}
+
+/* GLOBAL STYLES */
+body {
+  font-family: "Raleway", sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* TYPOGRAPHY */
+h1, h2, h3, h4, h5, h6 {
+  color: var(--heading-color);
+  margin-bottom: 0.5em;
+}
+
+p {
+  color: var(--paragraph-color);
+  line-height: 1.6;
+  margin-bottom: 1em;
+}
+
+/* BUTTON */
+button {
+  background-color: var(--button-bg);
+  color: var(--text-color);
+  border: none;
+  border-radius: 3px;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: var(--button-hover-bg);
+}
+
+/* DARK MODE TOGGLE BUTTON */
+.dark-mode-toggle {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  background-color: var(--button-bg);
+  color: var(--text-color);
+  border: none;
+  border-radius: 5px;
+  padding: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.dark-mode-toggle:hover {
+  background-color: var(--button-hover-bg);
+}
+
+/* TYPOGRAPHY */
+p {
+  font-size: 1rem; /* Default paragraph font size */
+  line-height: 1.6; /* Improved readability */
+  margin: 0 0 1em; /* Consistent spacing */
+  color: #666; /* Softer tone for paragraphs */
+}
+
+h1 {
+  font-size: 2rem; /* Main heading size */
+  font-weight: bold;
+  color: #222; /* Darker color for emphasis */
+  margin: 0 0 0.5em; /* Space below heading */
+}
+
+h2 {
+  font-size: 1.75rem; /* Secondary heading */
+  font-weight: bold;
+  color: #444; /* Slightly lighter than h1 */
+  margin: 0 0 0.5em;
+}
+
+h3 {
+  font-size: 1.5rem; /* Tertiary heading */
+  font-weight: bold;
+  color: #555; /* Slightly lighter than h2 */
+  margin: 0 0 0.5em;
+}
+
+h4 {
+  font-size: 1.25rem;
+  font-weight: normal;
+  color: #666; /* Consistent with paragraph color */
+  margin: 0 0 0.5em;
+}
+
+h5, h6 {
+  font-size: 1rem;
+  font-weight: normal;
+  color: #777;
+  margin: 0 0 0.5em;
+}
+
+/* LINKS */
+a {
+  color: #FFF; 
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+/* BUTTONS */
+button {
+  font-family: inherit; /* Match body font */
+  font-size: 1rem;
+  color: white;
+  background-color: #00bcd4;
+  border: none;
+  border-radius: 3px;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+button:hover {
+  background-color: #0097a7;
+}
+
+button:active {
+  background-color: #0097a7;
+}
+
+button:disabled {
+  background-color: #ddd;
+  color: #aaa;
+  cursor: not-allowed;
+}
+
+/* LISTS */
+ul, ol {
+  margin: 0 0 1em;
+  padding-left: 2em;
+}
+
+li {
+  margin: 0.5em 0;
+  font-size: 1rem;
+  color: #555;
+}
+
+/* BLOCKQUOTE */
+blockquote {
+  font-size: 1.25rem;
+  font-style: italic;
+  color: #555;
+  border-left: 4px solid #ddd;
+  padding-left: 1em;
+  margin: 0 0 1em;
+}
+
+/* FORM INPUTS */
+input, textarea {
+  font-family: inherit; /* Match body font */
+  font-size: 1rem;
+  color: #333;
+  border: 1px solid #ddd;
+  border-radius: 3px;
+  padding: 10px;
+  width: 100%;
+}
+
+input:focus, textarea:focus {
+  border-color: #00bcd4;
+  outline: none;
+}
+
+/* Ensure Global Consistency */
+textarea {
+  line-height: 1.5;
+}
 /* INTRO POPUP */
 
 .intro-screen {
@@ -29,12 +215,10 @@ body {
 }
 
 .intro-content h1 {
-  font-size: 22pt;
   margin-bottom: 10px;
 }
 
 .intro-content p {
-  font-size: 14pt;
   max-width: 600px;
 }
 
@@ -42,7 +226,6 @@ body {
   background: #ff7e5f;
   color: white;
   padding: 15px 30px;
-  font-size: 1.2rem;
   border: none;
   border-radius: 5px;
   cursor: pointer;
@@ -182,8 +365,6 @@ body {
   border-radius: 3px; /* Match the rounded corners of popular tags */
   display: flex;
   align-items: center;
-  font-size: 0.9rem; /* Match size to popular tags */
-  color: #333; /* Default text color */
 }
 
 .active-tag span {
@@ -235,9 +416,7 @@ body {
 }
 
 .project-title {
-  font-size: 24px;
   margin: 20px 0 10px 0;
-  color: #000; 
 }
 
 .project-tags button {
@@ -256,8 +435,6 @@ body {
 }
 
 .project-description {
-  font-size: 16px;
-  color: #666;
   padding: 0px 40px 30px 40px; /* Add padding for better readability */
 }
 
@@ -349,8 +526,6 @@ body {
 
 .details p {
   margin-bottom: 10px;
-  font-size: 1rem;
-  line-height: 1.5;
 }
 
 /*RESUME SECTION*/
@@ -358,33 +533,22 @@ body {
   background: white;
   border: 1px solid #ddd;
   border-radius: 8px;
-  padding: 20px;
-  margin-bottom: 20px;
-  text-align: left;
-  transition: box-shadow 0.3s;
+  overflow: hidden;
+  text-align: center;
+  transition: transform 0.3s;
+  width: 100%; /* Make card take full width */
+  max-width: 1000px; /* Limit card width for larger screens */
+  margin: 0 auto; /* Center card within grid */
+  text-decoration: none;
+  padding: 40px; 
+  margin-top: 20px;
 }
 
 .resume-card:hover {
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.resume-card h3 {
-  font-size: 1.5rem;
-  margin-bottom: 15px;
-}
-
-.resume-card h4 {
-  font-size: 1.25rem;
-  margin-bottom: 10px;
-}
-
-.resume-card p {
-  font-size: 1rem;
-  margin-bottom: 10px;
+  transform: scale(1.02);
 }
 
 .resume-card ul {
-  list-style-type: disc;
   padding-left: 20px;
 }
 
@@ -395,33 +559,28 @@ body {
 /* RESPONSIVE DESIGN */
 
 @media (max-width: 768px) {
-  .intro-content h1 {
-    font-size: 2rem;
+  h1 {
+    font-size: 1.75rem;
   }
 
-  .intro-content p {
-    font-size: 1.2rem;
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  h3 {
+    font-size: 1.25rem;
+  }
+
+  p {
+    font-size: 0.9rem;
   }
 
   .intro-button {
     padding: 10px 20px;
-    font-size: 1rem;
   }
 
   .project-grid {
     padding: 10px;
-  }
-
-  .project-card {
-    font-size: 16px;
-  }
-
-  .project-title {
-    font-size: 16px;
-  }
-
-  .project-description {
-    font-size: 12px;
   }
 
   .hamburger {
@@ -430,6 +589,7 @@ body {
 
   .navbar {
     height: 40px;
+    text-decoration: none;
   }
 
   .nav-tabs {
@@ -444,6 +604,10 @@ body {
 
   .nav-tabs.open {
     display: flex; /* Show menu when open */
+  }
+
+  .nav-button{
+    text-decoration: none;
   }
 
   .search-bar {
@@ -461,28 +625,24 @@ body {
 }
 
 @media (max-width: 480px) {
-  .intro-content h1 {
-    font-size: 16pt;
+  h1 {
+    font-size: 1.5rem;
   }
 
-  .intro-content p {
-    font-size: 12pt;
+  h2 {
+    font-size: 1.25rem;
+  }
+
+  h3 {
+    font-size: 1.1rem;
+  }
+
+  p {
+    font-size: 0.85rem;
   }
 
   .intro-button {
     padding: 10px 15px;
-    font-size: 0.9rem;
   }
 
-  .project-card {
-    font-size: 14px;
-  }
-
-  .project-title {
-    font-size: 14px;
-  }
-
-  .project-description {
-    font-size: 11px;
-  }
 }

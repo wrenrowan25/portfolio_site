@@ -50,11 +50,8 @@ function ExpandedView({ projects }) {
         >
           Video Demo
         </button>
-        <button
-          onClick={() => setActiveTab("github")}
-          className={activeTab === "github" ? "active" : ""}
-        >
-          GitHub
+        <button>
+          <a href={project.github} target="_blank" rel="noopener noreferrer">Github</a>
         </button>
       </nav>
       <div className="expanded-content">
