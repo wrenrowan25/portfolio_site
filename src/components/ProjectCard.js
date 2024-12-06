@@ -1,6 +1,5 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import "./../App.css";
 
 function ProjectCard({ project }) {
   return (
@@ -9,7 +8,7 @@ function ProjectCard({ project }) {
       <h3 className="project-title">{project.title}</h3>
       <div className="project-tags">
         {project.tags.map((tag) => (
-          <span key={tag}>{tag}</span>
+          <button key={tag}>{tag}</button>
         ))}
       </div>
       <p className="project-description">{project.description}</p>

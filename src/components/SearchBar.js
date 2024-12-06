@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
-import "./../App.css";
 
 function SearchBar({ activeTags = [], setActiveTags, activeTab }) {
   const [inputValue, setInputValue] = useState("");
@@ -9,7 +8,7 @@ function SearchBar({ activeTags = [], setActiveTags, activeTab }) {
   const popularTagsByTab = {
     web: ["React.js", "JavaScript", "CSS", "HTML", "Frontend"],
     software: ["Python", "C++", "Java", "Algorithms", "Backend"],
-    networking: ["Security", "Firewalls", "Networking", "Linux", "Protocols"],
+    security: ["Firewalls", "VPN", "Pen Testing", "Protocols", "Security Tools"],
     graphic: ["Photoshop", "Illustrator", "UI/UX", "Branding", "Typography"],
     modeling: ["Low-Poly", "High-Poly", "Rigged", "Environment", "Character"],
     resume: ["Leadership", "Teamwork", "Problem-Solving", "Certifications", "Education"],

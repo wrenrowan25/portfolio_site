@@ -1,5 +1,5 @@
 import React from 'react';
-import './../App.css';
+import { Link } from 'react-router-dom';
 
 function IntroScreen({ onClose }) {
   return (
@@ -26,9 +26,9 @@ function IntroScreen({ onClose }) {
             Feel free to explore my portfolio and reach out — let’s turn our ideas into reality together!
         </p>
       </div>
-      <button className="intro-button" onClick={onClose}>
+      <Link to="/portfolio/webdev" className="intro-button" onClick={onClose}>
         Check Out My Portfolio!
-      </button>
+      </Link>
     </div>
   );
 }

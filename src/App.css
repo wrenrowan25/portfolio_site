@@ -222,6 +222,7 @@ body {
   width: 100%; /* Make card take full width */
   max-width: 1000px; /* Limit card width for larger screens */
   margin: 0 auto; /* Center card within grid */
+  text-decoration: none;
 }
 
 .project-card:hover {
@@ -235,13 +236,29 @@ body {
 
 .project-title {
   font-size: 24px;
-  margin: 15px 0;
+  margin: 20px 0 10px 0;
+  color: #000; 
+}
+
+.project-tags button {
+  margin: 0 5px;
+  padding: 5px 10px;
+  border: none;
+  background: #00bcd4;
+  color: white;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.project-tags button.active {
+  background: #007bff;
+  font-weight: bold;
 }
 
 .project-description {
   font-size: 16px;
   color: #666;
-  padding: 0 20px; /* Add padding for better readability */
+  padding: 0px 40px 30px 40px; /* Add padding for better readability */
 }
 
 /* EXPANDED VIEW */

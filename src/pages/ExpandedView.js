@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
-import "./../App.css";
 
 function ExpandedView({ projects }) {
   const { id } = useParams(); // Get the project ID from the URL

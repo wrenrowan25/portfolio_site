@@ -1,13 +1,12 @@
 import React from "react";
-import "./../App.css";
 import profilePicture from "../images/pfp.jpg";
 
 function Resume() {
   return (
     <>
-      <div class="resume-card">
+      <div className="resume-card">
         <h3>Wren Rowan</h3>
-        <div class="popular-tags">
+        <div className="popular-tags">
             <button><a href="https://www.linkedin.com/in/wren-rowan/" target="_blank" rel="noopener noreferrer">LinkedIn</a></button> 
             <button><a href="https://github.com/wrenrowan25" target="_blank" rel="noopener noreferrer">Github</a></button>
         </div>
@@ -17,7 +16,7 @@ function Resume() {
         </div>
         <img src={profilePicture} alt="Wren Rowan"></img>
       </div>
-      <div class="resume-card">
+      <div className="resume-card">
         <h3>Professional Experience</h3>
         <h4>Student IT Service Desk Manager</h4>
         <p><strong>Organization:</strong> SUNY Cobleskill - College of Agriculture and Technology, Cobleskill, NY</p>
@@ -30,7 +29,7 @@ function Resume() {
           <li>Collaborated with full-time staff to oversee service desk operations, implement process improvements, and assist in interviewing and hiring new student employees. Helped communicate between full-time staff and students regarding process documentation and training initiatives.</li>
         </ul>
       </div>
-      <div class="resume-card">
+      <div className="resume-card">
         <h3>Technical Skills</h3>
         <ul>
           <li><strong>Programming Languages:</strong> HTML, CSS, JavaScript, C++, Python, SQL</li>
@@ -42,7 +41,7 @@ function Resume() {
           <li><strong>IT Service Management:</strong> TeamDynamix ticketing system</li>
         </ul>
       </div>
-      <div class="resume-card">
+      <div className="resume-card">
         <h3>Education</h3>
         <h4>State University of New York College of Agriculture and Technology at Cobleskill</h4>
         <p><strong>Degree:</strong> Bachelor of Technology in Cybersecurity</p>

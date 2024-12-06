@@ -1,23 +1,21 @@
 import React, { useState } from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Navbar from "./components/Navbar";
-import ProjectCard from "./components/ProjectCard";
-import ExpandedView from "./components/ExpandedView";
-import IntroScreen from "./components/IntroScreen";
-import SearchBar from "./components/SearchBar";
-import Resume from "./components/Resume";
+import ExpandedView from "./pages/ExpandedView";
+import IntroScreen from "./pages/IntroScreen";
+import Resume from "./pages/Resume";
 import { projects } from "./data";
-import "./App.css";
+import Portfolio from "./pages/Portfolio";
 
 function App() {
-  const [activeTab, setActiveTab] = useState("web"); // Track the active tab
-  const [activeTags, setActiveTags] = useState([]); // Track active tags for search
-  const [showIntro, setShowIntro] = useState(true); // Manage intro screen visibility
+  const [activeTab, setActiveTab] = useState("web");
+  const [showIntro, setShowIntro] = useState(true);
+  const [activeTags, setActiveTags] = useState([]);
 
   const closeIntro = () => {
     setShowIntro(false);
   };
-
+  console.log(activeTab)
   return (
     <Router>
       <div className="App">
@@ -25,47 +23,19 @@ function App() {
           <IntroScreen onClose={closeIntro} />
         ) : (
           <>
-            {/* Navbar */}
             <Navbar activeTab={activeTab} setActiveTab={setActiveTab} />
 
             <Routes>
-              {/* Resume Tab */}
+              {/* Resume Page */}
               <Route path="/resume" element={<Resume />} />
 
-              {/* Project Grid */}
+              {/* Portfolio Pages */}
               <Route
-                path="/"
-                element={
-                  <>
-                    {/* SearchBar with activeTags and setActiveTags */}
-                    <SearchBar
-                      activeTags={activeTags}
-                      setActiveTags={setActiveTags}
-                      activeTab={activeTab}
-                    />
-                    <div className="project-grid">
-                      {(activeTags.length > 0
-                        ? projects.filter((project) =>
-                            project.tags.some((tag) =>
-                              activeTags.includes(tag)
-                            )
-                          )
-                        : projects
-                      )
-                        .filter((project) => project.category === activeTab)
-                        .map((project) => (
-                          <ProjectCard
-                            key={project.id}
-                            project={project}
-                            onClick={`/project/${project.id}`}
-                          />
-                        ))}
-                    </div>
-                  </>
-                }
+                path="/portfolio/*"
+                element={<Portfolio projects={projects} activeTab={activeTab} activeTags={activeTags} setActiveTags={setActiveTags} />}
               />
 
-              {/* Expanded View */}
+              {/* Expanded Project Page */}
               <Route
                 path="/project/:id"
                 element={<ExpandedView projects={projects} />}
