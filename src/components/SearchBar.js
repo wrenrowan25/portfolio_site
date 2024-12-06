@@ -42,35 +42,37 @@ function SearchBar({ activeTags = [], setActiveTags, activeTab }) {
   };
 
   return (
-    <div className="search-bar">
-      <div className="search-input">
-        <input
-          type="text"
-          placeholder="Search projects by technology or skill..."
-          value={inputValue}
-          onChange={(e) => setInputValue(e.target.value)}
-          onKeyPress={handleKeyPress}
-        />
-      </div>
-      <div className="popular-tags">
-        {popularTags.map((tag) => (
-          <button
-            key={tag}
-            onClick={() => toggleTag(tag)} // Toggle tag when clicked
-            className={activeTags.includes(tag) ? "active" : ""}
-          >
-            {tag}
-          </button>
-        ))}
+    <>
+      <div className="search-bar">
+        <div className="search-input">
+          <input
+            type="text"
+            placeholder="Search projects by technology or skill..."
+            value={inputValue}
+            onChange={(e) => setInputValue(e.target.value)}
+            onKeyPress={handleKeyPress}
+          />
+        </div>
+        <div className="popular-tags">
+          {popularTags.map((tag) => (
+            <button
+              key={tag}
+              onClick={() => toggleTag(tag)} // Toggle tag when clicked
+              className={activeTags.includes(tag) ? "active" : ""}
+            >
+              {tag}
+            </button>
+          ))}
+        </div>
       </div>
       <div className="active-tags">
-        {activeTags.map((tag) => (
-          <div key={tag} className="active-tag">
-            {tag} <span onClick={() => removeTag(tag)}>×</span>
-          </div>
-        ))}
-      </div>
+      {activeTags.map((tag) => (
+        <button key={tag} className="active-tag">
+          {tag} <span onClick={() => removeTag(tag)}>×</span>
+        </button>
+      ))}
     </div>
+  </>
   );
 }
 
