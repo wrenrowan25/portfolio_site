@@ -26,6 +26,7 @@ function Portfolio({ projects, activeTab, activeTags, setActiveTags }) {
                     <ProjectCard
                         key={project.id}
                         project={project}
+                        activeTags={activeTags}
                         onClick={`/project/${project.id}`}
                     />
                 )) : (
