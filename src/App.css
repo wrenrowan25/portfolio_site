@@ -748,18 +748,6 @@ transform: scale(1.02);
   margin: 2.5px 0 0 0;
 }
 
-.profile-picture {
-  border-radius: 50%; 
-  border: 3px solid white; 
-  display: block; 
-  height: 100px;
-  margin-bottom: 20px; 
-  margin-left: auto;
-  margin-right: auto; 
-  object-fit: cover;
-  width: 100px; 
-}
-
 /* RESUME CARD */
 
 .resume-card:hover {
@@ -994,7 +982,7 @@ transform: scale(1.02);
   .profile-picture {
     height: 120px; /* Adjust size */
     width: 120px;
-    top: 20px;
+    top: 35px;
   }
   .profile-details h3 {
     font-size: 22px; /* Adjust font size */
@@ -1211,9 +1199,9 @@ transform: scale(1.02);
     height: 100px; /* Reduce banner height */
   }
   .profile-picture {
-    height: 100px; /* Reduce size */
-    width: 100px;
-    top: 15px;
+    height: 110px; /* Reduce size */
+    width: 110px;
+    top: 28px;
   }
   .profile-details h3 {
     font-size: 20px;
