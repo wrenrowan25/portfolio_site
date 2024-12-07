@@ -203,25 +203,25 @@ input:focus, textarea:focus {
   background-image: url("images/background.jpg"); 
   background-position: center;
   background-size: cover;
-  display: flex;
   height: 100vh;
-  justify-content: center;
-  position: relative;
   width: 100%;
   z-index: 1000;
 }
 
 .intro-container {
+  position: absolute;
+  top: 125px;
+  left: 5vw;
   align-items: center;
   background-color: rgba(0, 0, 0, 0.8); 
   border-radius: 10px;
   box-sizing: border-box;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: center;
   max-width: 1200px;
-  padding: 50px 50px 75px 50px;
-  width: 80%;
+  padding: 1vw 1.5vw 2vw 1.5vw;
+  width: 45%;
 }
 
 .intro-text {
@@ -231,19 +231,15 @@ input:focus, textarea:focus {
 
 .intro-text h1 {
   color: white;
-  font-size: 35px;
+  font-size: 2vw;
   margin-bottom: 20px;
 }
 
 .intro-text p {
   color: white;
-  font-size: 16px;
+  font-size: 0.9vw;
   line-height: 1.5;
   margin-bottom: 15px;
-}
-
-.intro-button-mobile {
-  display: none;
 }
 
 .intro-button {
@@ -253,30 +249,14 @@ input:focus, textarea:focus {
   color: white;
   cursor: pointer;
   display: inline-block;
-  font-size: 16px;
-  margin-top: 20px;
-  padding: 15px 30px;
+  font-size: 0.8vw;
+  padding: 1vw 2vw;
   text-decoration: none;
   transition: background-color 0.3s ease;
 }
 
 .intro-button:hover {
   background-color: var(--button-hover-bg); 
-}
-
-.intro-image {
-  align-items: center;
-  display: flex;
-  flex: 1;
-  justify-content: center;
-  padding: 20px;
-}
-
-.intro-image img {
-  border-radius: 10px;
-  max-height: 100%;
-  max-width: 100%;
-  object-fit: cover;
 }
 
 /* ========== NAVIGATION BAR ========== */
@@ -596,13 +576,14 @@ input:focus, textarea:focus {
   border: none;
   color: var(--text-color); 
   cursor: pointer;
-  font-size: 1rem;
+  font-size: 16px;
   padding: 10px 20px;
   transition: background 0.3s, color 0.3s;
 }
 
 .expanded-tabs button a {
   color: var(--text-color); 
+  font-size: 16px;
 }
 
 .expanded-tabs button.active {
@@ -901,50 +882,26 @@ transform: scale(1.02);
   /* INTRO POPUP */
   .intro-container {
     flex-direction: column; /* Stack text and image vertically */
-    padding: 30px; /* Reduce padding for tablets */
-    width: 60%; /* Slightly smaller width */
+    padding: 2vw 2.25vw 3.5vw 2.25vw; /* Reduce padding for tablets */
+    width: 50%; /* Slightly smaller width */
   }
 
   .intro-text h1 {
-    font-size: 28px; /* Adjust heading size */
+    font-size: 2.25vw; /* Adjust heading size */
     margin: 0 0 20px 0; /* Reduce spacing */
   }
 
   .intro-text p {
-    font-size: 14px; /* Adjust font size */
-    margin-bottom: 15px; /* Reduce paragraph spacing */
+    font-size: 1.4vw; /* Adjust font size */
+    margin-bottom: 1.4vw; /* Reduce paragraph spacing */
   }
 
   .intro-button {
-    display: none;
-  }
-
-  .intro-button-mobile {
-    display: block;
-    position: relative;
-    font-size: 14px; /* Smaller button text */
-    padding: 10px 20px; /* Smaller button size */
     margin-top: 20px; /* Add spacing between text and button */
-    background-color: var(--button-bg); 
-    border-radius: 5px;
-    border: none;
-    color: white;
-    cursor: pointer;
-    font-size: 16px;
-    margin-top: 20px;
-    padding: 15px 30px;
-    text-decoration: none;
-    transition: background-color 0.3s ease;
+    font-size: 1.4vw;
+    margin-top: 0;
+    padding: 1.5vw 2.25vw;
   } 
-
-  .intro-image {
-    display: none; /* Do not show profile picture in tablet view*/
-  }
-
-  .intro-image img {
-    max-width: 80%; /* Fit image properly */
-    height: auto;
-  }
 
   /* NAVIGATION BAR */
   .navbar {
@@ -1019,10 +976,6 @@ transform: scale(1.02);
   .expanded-tabs {
     gap: 10px;
     padding: 10px 15px;
-  }
-  .expanded-tabs button {
-    padding: 10px 15px; /* Adjust button size */
-    font-size: 14px;
   }
 
   /* IMAGE CAROUSEL */
@@ -1123,6 +1076,14 @@ transform: scale(1.02);
     margin-bottom: 10px; /* Reduce paragraph spacing */
   }
 
+  .intro-button {
+    margin-top: 20px; /* Add spacing between text and button */
+    font-size: 14px;
+    margin-top: 20px;
+    padding: 12px 24px;
+  } 
+
+
   /* NAVIGATION BAR */
 
   .hamburger {
@@ -1222,7 +1183,11 @@ transform: scale(1.02);
     padding: 5px 10px;
   }
   .expanded-tabs button {
+    font-size: 14px;
     padding: 5px 10px; /* Smaller buttons */
+  }
+
+  .expanded-tabs button a {
     font-size: 14px;
   }
 

@@ -27,16 +27,10 @@ function IntroScreen({ onClose }) {
           <p>
             Feel free to explore my portfolio and reach out — let’s turn our ideas into reality together!
           </p>
-          <Link to="/portfolio/webdev" className="intro-button" onClick={onClose}>
-            Check Out My Portfolio!
-          </Link>
         </div>
-        <Link to="/portfolio/webdev" className="intro-button-mobile" onClick={onClose}>
+        <Link to="/portfolio/webdev" className="intro-button" onClick={onClose}>
             Check Out My Portfolio!
         </Link>
-        <div className="intro-image">
-          <img src={profilePicture} alt="Wren Rowan" />
-        </div>
       </div>
     </div>
   );
