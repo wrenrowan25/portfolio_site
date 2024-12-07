@@ -223,50 +223,81 @@ textarea {
 
 /* INTRO POPUP */
 
+/* Intro Screen Styles */
 .intro-screen {
-  align-items: center;
-  background: linear-gradient(to right, #4facfe, #00f2fe);
-  color: white;
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-  justify-content: center;
-  left: 0;
-  position: fixed;
-  top: 0;
+  background-image: url("images/background.jpg"); /* Replace with your background image path */
+  background-size: cover;
+  background-position: center;
   width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
   z-index: 1000;
 }
 
-.intro-content {
+.intro-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.8); /* Black box with 80% opacity */
+  padding: 20px;
+  border-radius: 10px;
+  width: 80%;
+  max-width: 1200px;
+}
+
+.intro-text {
+  flex: 1;
+  padding: 20px;
+}
+
+.intro-text h1 {
+  font-size: 35px;
   margin-bottom: 20px;
-  text-align: left;
+  color: white;
 }
 
-.intro-content h1 {
-  margin-bottom: 10px;
-}
-
-.intro-content p {
-  max-width: 600px;
+.intro-text p {
+  font-size: 16px;
+  line-height: 1.5;
+  margin-bottom: 15px;
+  color: white;
 }
 
 .intro-button {
-  background: #ff7e5f;
-  border-radius: 5px;
-  border: none;
-  color: white;
-  cursor: pointer;
+  display: inline-block;
+  margin-top: 20px;
   padding: 15px 30px;
-  transition: background 0.3s;
+  font-size: 1.2rem;
+  background-color: var(--button-bg); /* Use the site's button color */
+  color: white;
+  text-decoration: none;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
 .intro-button:hover {
-  background: #ff6b4a;
+  background-color: var(--button-hover-bg); /* Use the site's hover color */
 }
 
-.intro-button:focus {
-  outline: none;
+.intro-image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.intro-image img {
+  max-height: 100%;
+  max-width: 100%;
+  border-radius: 10px;
+  object-fit: cover;
 }
 
 /* NAVIGATION BAR */

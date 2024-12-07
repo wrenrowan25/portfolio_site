@@ -19,17 +19,24 @@ function App() {
     setShowIntro(false);
   };
 
-  /*DarkMode Toggle Button Functionality*/
+  /* Dark Mode Toggle Button Functionality */
   const toggleDarkMode = () => {
     setIsDarkMode((prevMode) => !prevMode);
   };
 
   useEffect(() => {
+    // Set the theme based on dark mode state
     document.documentElement.setAttribute(
       "data-theme",
       isDarkMode ? "dark" : "light"
     );
-  }, [isDarkMode]);
+
+    // Hide footer when intro screen is visible
+    const footer = document.querySelector("footer");
+    if (footer) {
+      footer.style.display = showIntro ? "none" : "block";
+    }
+  }, [isDarkMode, showIntro]);
 
   return (
     <Router>
@@ -42,11 +49,8 @@ function App() {
             <Navbar activeTab={activeTab} setActiveTab={setActiveTab} />
 
             {/* Dark Mode Toggle */}
-            <button
-              className="dark-mode-toggle"
-              onClick={toggleDarkMode}
-            >
-              <img src={isDarkMode ? lightbulbdark : lightbulblight} />
+            <button className="dark-mode-toggle" onClick={toggleDarkMode}>
+              <img src={isDarkMode ? lightbulbdark : lightbulblight} alt="Dark Mode Toggle" />
             </button>
 
             {/* Routes */}
