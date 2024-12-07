@@ -760,6 +760,10 @@ textarea {
     transition: transform 0.3s;
 }
 
+.profile-card:hover {
+  transform: scale(1.02); 
+}
+
 /* PROFILE BANNER */
 .profile-banner {
   position: relative;
