@@ -1,6 +1,7 @@
 import React from "react";
-import profilePicture from "../images/pfp.jpg";
+import ProfilePicture from "../images/pfp.jpg";
 import SUNYlogo from "../images/SUNYlogo.png";
+import BannerImage from "../images/banner.jpg";
 
 // Helper function to calculate months between two dates
 const calculateDuration = (startDate) => {
@@ -33,19 +34,19 @@ function Resume() {
     <>
       <div className="profile-card">
         <div className="profile-banner">
-          <img className="banner-image" src="https://via.placeholder.com/800x200" alt="Banner"/>
+          <img className="banner-image" src={BannerImage} alt="Banner"/>
         </div>
-        <img className="profile-picture" src={profilePicture} alt="Wren Rowan"/>
+        <img className="profile-picture" src={ProfilePicture} alt="Wren Rowan"/>
         <div className="profile-details">
-          <div>
+          <div className="profile-title">
             <h3>Wren Rowan</h3>
-            <div className="popular-tags">
+            <div className="profile-buttons">
               <button><a href="https://www.linkedin.com/in/wren-rowan/" target="_blank" rel="noopener noreferrer"> <i className="fab fa-linkedin"/></a></button>
               <button><a href="https://github.com/wrenrowan25" target="_blank" rel="noopener noreferrer"><i className="fab fa-github"/></a></button>
               <button><a href="mailto:wrenrowan@example.com"><i className="fas fa-envelope"/></a></button>
             </div>
           </div>
-          <h4>Student IT Service Desk Manager at SUNY Cobleskill - College of Agriculture and Technology</h4>
+          <h4>Student IT Service Desk Manager at SUNY Cobleskill</h4>
           <p>Cobleskill, New York, United States</p>
         </div>
       </div>
