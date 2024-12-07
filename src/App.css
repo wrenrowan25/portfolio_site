@@ -325,9 +325,9 @@ input:focus, textarea:focus {
   display: flex;
   flex-direction: column;
   justify-content: left;
+  margin: 0 auto; 
   margin-bottom: 0px;
   margin-top: 40px;
-  margin: 0 auto; 
   max-width: 1000px; 
   overflow: hidden;
   padding: 10px 15px 0px 15px;
