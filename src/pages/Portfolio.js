@@ -29,7 +29,7 @@ function Portfolio({ projects, activeTab, activeTags, setActiveTags }) {
                         onClick={`/project/${project.id}`}
                     />
                 )) : (
-                    <div className="no-results-card">No projects match the current filter</div>
+                    <div className="no-results-card">There are no projects that match the current search criteria.</div>
                 )}
             </div>
         </>

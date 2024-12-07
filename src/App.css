@@ -12,6 +12,11 @@
   --card-border: #ddd;
   --card-hover-bg: #f0f0f0;
 
+  /*No Results Card*/
+  --no-results-bg: #F4F2EE; /* Light neutral background */
+  --no-results-color: #555555; /* Neutral gray text */
+  --no-results-border: #cccccc; /* Subtle border color */
+
   /* Expanded View */
   --expanded-bg: #ffffff;
   --expanded-border: #ddd;
@@ -45,6 +50,11 @@
   --card-bg: #333;
   --card-border: #555;
   --card-hover-bg: #444;
+
+  /*No Results Card*/
+  --no-results-bg: #2c2c2c; /* Light neutral background */
+  --no-results-color: #dddddd; /* Neutral gray text */
+  --no-results-border: #444444; /* Subtle border color */
 
   /* Expanded View */
   --expanded-bg: #333;
@@ -97,16 +107,16 @@ button:hover {
 
 /* DARK MODE TOGGLE BUTTON */
 .dark-mode-toggle {
-  background-color: var(--button-bg);
-  border-radius: 5px;
-  border: none;
-  color: var(--text-color);
-  cursor: pointer;
-  padding: 10px;
+  background: "var(--button-bg)";
+  color: "var(--text-color)";
+  cursor: "pointer";
+  border: "none";
+  border-radius: "5px";
+  padding: 8px 11px;
   position: fixed;
-  right: 10px;
-  top: 10px;
-  transition: background-color 0.3s ease;
+  right: 20px;
+  top: 11px;
+  transition: "background-color 0.3s ease";
 }
 
 .dark-mode-toggle:hover {
@@ -368,14 +378,14 @@ textarea {
 
 /*NO RESULTS MESSAGE */
 .no-results-card {
-  background-color: #f5f5f5; /* Soft neutral gray */
-  border: 1px solid #ddd; /* Subtle border for definition */
+  background-color: var(--no-results-bg); /* Soft neutral gray */
+  border: 1px solid var(--no-results-border); /* Subtle border for definition */
   border-radius: 8px; /* Smooth rounded edges */
   padding: 20px; /* Inner spacing */
   margin: 20px auto; /* Centered with top and bottom spacing */
   max-width: 600px; /* Limit width for better readability */
   text-align: center; /* Center-align the text */
-  color: #666; /* Neutral text color */
+  color: var(--no-results-color); /* Neutral text color */
   font-size: 16px; /* Comfortable font size */
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Light shadow for depth */
 }

@@ -45,18 +45,6 @@ function App() {
             <button
               className="dark-mode-toggle"
               onClick={toggleDarkMode}
-              style={{
-                position: "fixed",
-                top: "8px",
-                right: "20px",
-                background: "var(--button-bg)",
-                color: "var(--text-color)",
-                border: "none",
-                borderRadius: "5px",
-                padding: "7px 9px 4px 9px",
-                cursor: "pointer",
-                transition: "background-color 0.3s ease",
-              }}
             >
               <img src={isDarkMode ? lightbulbdark : lightbulblight} />
             </button>
