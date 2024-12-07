@@ -209,9 +209,6 @@ input:focus, textarea:focus {
 }
 
 .intro-container {
-  position: absolute;
-  top: 125px;
-  left: 5vw;
   align-items: center;
   background-color: rgba(0, 0, 0, 0.8); 
   border-radius: 10px;
@@ -219,8 +216,11 @@ input:focus, textarea:focus {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  left: 5vw;
   max-width: 1200px;
   padding: 1vw 1.5vw 2vw 1.5vw;
+  position: absolute;
+  top: 125px;
   width: 45%;
 }
 
@@ -885,7 +885,6 @@ transform: scale(1.02);
   }
 
   .intro-button {
-    margin-top: 20px; /* Add spacing between text and button */
     font-size: 1.4vw;
     margin-top: 0;
     padding: 1.5vw 2.25vw;
@@ -1065,7 +1064,6 @@ transform: scale(1.02);
   }
 
   .intro-button {
-    margin-top: 20px; /* Add spacing between text and button */
     font-size: 14px;
     margin-top: 20px;
     padding: 12px 24px;
