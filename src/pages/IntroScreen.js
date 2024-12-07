@@ -31,6 +31,9 @@ function IntroScreen({ onClose }) {
             Check Out My Portfolio!
           </Link>
         </div>
+        <Link to="/portfolio/webdev" className="intro-button-mobile" onClick={onClose}>
+            Check Out My Portfolio!
+        </Link>
         <div className="intro-image">
           <img src={profilePicture} alt="Wren Rowan" />
         </div>

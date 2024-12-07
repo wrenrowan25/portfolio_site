@@ -220,7 +220,7 @@ input:focus, textarea:focus {
   flex-direction: row;
   justify-content: center;
   max-width: 1200px;
-  padding: 50px;
+  padding: 50px 50px 75px 50px;
   width: 80%;
 }
 
@@ -240,6 +240,10 @@ input:focus, textarea:focus {
   font-size: 16px;
   line-height: 1.5;
   margin-bottom: 15px;
+}
+
+.intro-button-mobile {
+  display: none;
 }
 
 .intro-button {
@@ -276,12 +280,11 @@ input:focus, textarea:focus {
 }
 
 /* ========== NAVIGATION BAR ========== */
-
 .navbar {
   background-color: #222;
   color: white;
   display: flex;
-  justify-content: center; 
+  justify-content: center;
   padding: 10px;
   position: relative;
 }
@@ -289,24 +292,25 @@ input:focus, textarea:focus {
 .navbar-content {
   align-items: center;
   display: flex;
-  justify-content: center; 
-  max-width: 1200px; 
+  justify-content: center;
+  max-width: 1200px;
   position: relative;
   width: 100%;
 }
 
+/* Hamburger Menu Button */
 .hamburger {
   background: none;
   border: none;
   color: white;
   cursor: pointer;
-  display: none; 
-  font-size: 1.5rem;
-  left: 10px; 
+  display: none; /* Hidden by default */
+  font-size: 25px;
   position: absolute;
+  left: 0px;
 }
 
-/*NAV TABS */
+/* Navigation Tabs */
 .nav-tabs {
   display: flex;
   gap: 10px;
@@ -867,4 +871,238 @@ transform: scale(1.02);
 .skills-grid div:hover {
   transform: translateY(-5px);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* ========== MEDIA QUERIES FOR MOBILE VIEW ========== */
+
+/* Mobile View: Maximum width of 768px */
+@media (max-width: 768px) {
+  
+  /* GLOBAL STYLES */
+  body {
+    font-size: 14px; /* Reduce font size for smaller screens */
+  }
+
+  /* TYPOGRAPHY */
+  h1 {
+    font-size: 28px;
+  }
+  h2 {
+    font-size: 22px;
+  }
+  h3 {
+    font-size: 16px;
+  }
+  p {
+    font-size: 14px;
+  }
+
+  /* INTRO POPUP */
+  .intro-container {
+    flex-direction: column; /* Stack text and image vertically */
+    padding: 40px; /* Reduce padding */
+    width: 95%; /* Maximize usage of smaller screens */
+  }
+
+  .intro-text {
+    padding: 0;
+  }
+
+  .intro-text h1 {
+    font-size: 24px; /* Smaller heading size */
+    margin: 0px 0px 15px 0px; /* Reduce spacing */
+  }
+
+  .intro-text p {
+    font-size: 14px; /* Reduce font size */
+    line-height: 1.4; /* Adjust line spacing for readability */
+    margin-bottom: 10px; /* Reduce paragraph spacing */
+  }
+
+  .intro-button {
+    display: none;
+  }
+
+  .intro-button-mobile {
+    display: block;
+    position: relative;
+    font-size: 14px; /* Smaller button text */
+    padding: 10px 20px; /* Smaller button size */
+    margin-top: 20px; /* Add spacing between text and button */
+    background-color: var(--button-bg); 
+    border-radius: 5px;
+    border: none;
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 20px;
+    padding: 15px 30px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+  } 
+
+  .intro-image {
+    display: none; /* Hide the profile picture in mobile view */
+  }
+  
+  /* NAVIGATION BAR */
+
+  .hamburger {
+    display: block; /* Show hamburger in mobile view */
+  }
+
+  .navbar {
+    position: relative;
+    height: 40px;
+  }
+
+  .nav-tabs {
+    display: none; /* Hide tabs by default in mobile view */
+    flex-direction: column; /* Stack items vertically in dropdown */
+    position: absolute;
+    top: 50px; /* Positioned below navbar */
+    left: 0;
+    width: 100%;
+    background-color: #333; /* Background for dropdown */
+    padding: 10px 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+  }
+
+  .nav-tabs.open {
+    display: flex; /* Show dropdown when open */
+  }
+
+  .nav-button {
+    padding: 10px; /* Adjust padding for dropdown items */
+    text-align: left; /* Align text to the left */
+    width: 100%; /* Full width for dropdown items */
+  }
+
+  .nav-button:hover {
+    background: #444; /* Darker hover background */
+  }
+
+/*DARK MODE TOGGLE BUTTON*/
+
+  .dark-mode-toggle {
+    position: absolute; /* Position independently of dropdown */
+    top: 13px;
+    right: 20px;
+    z-index: 1; /* Ensure it stays above the dropdown */
+    padding: 3px 5px;
+  }
+
+  /* SEARCH BAR */
+  .search-bar {
+    padding: 10px;
+    margin-top: 20px; /* Add some spacing */
+  }
+  .search-input {
+    width: 100%; /* Full-width input field */
+    max-width: none;
+  }
+  .search-top {
+    flex-direction: column; /* Stack search elements */
+    align-items: stretch;
+    gap: 10px;
+  }
+
+  /* NO RESULTS MESSAGE */
+  .no-results-card {
+    font-size: 14px; /* Smaller font */
+    padding: 15px; /* Reduce padding */
+  }
+
+  /* WARNING MESSAGE */
+  .warning-overlay {
+    width: 90%; /* Limit width */
+    padding: 15px; /* Adjust padding */
+  }
+
+  /* PROJECT GRID */
+  .project-grid {
+    gap: 15px; /* Reduce spacing */
+  }
+  .project-card {
+    width: 100%; /* Ensure full-width for smaller screens */
+  }
+
+  /* EXPANDED VIEW */
+  .expanded-view {
+    padding: 10px; /* Reduce padding */
+  }
+  .expanded-view-card {
+    padding: 15px; /* Reduce card padding */
+  }
+  .top-bar h2 {
+    font-size: 18px; /* Smaller title font */
+  }
+  .expanded-tabs {
+    flex-wrap: wrap; /* Allow tabs to wrap */
+    gap: 5px;
+    padding: 5px 10px;
+  }
+  .expanded-tabs button {
+    padding: 5px 10px; /* Smaller buttons */
+    font-size: 14px;
+  }
+
+  /* IMAGE CAROUSEL */
+  .carousel-image {
+    max-width: 100%; /* Ensure image scales to fit smaller screens */
+  }
+  .image-carousel {
+    flex-direction: column; /* Stack buttons above and below image */
+  }
+  .image-carousel button {
+    font-size: 1rem; /* Adjust button size */
+  }
+
+  /* RESUME SECTION */
+  .resume-card {
+    padding: 20px; /* Reduce padding */
+    margin: 10px auto; /* Smaller margin */
+  }
+  .profile-banner {
+    height: 100px; /* Reduce banner height */
+  }
+  .profile-picture {
+    height: 100px; /* Reduce size */
+    width: 100px;
+    top: 15px;
+  }
+  .profile-details h3 {
+    font-size: 20px;
+  }
+  .profile-details h4 {
+    font-size: 16px;
+  }
+  .profile-details p {
+    font-size: 14px;
+  }
+  .job-entry {
+    flex-direction: column; /* Stack job image and details */
+    gap: 10px;
+  }
+  .organization-image {
+    height: 40px; /* Reduce size */
+    width: 40px;
+  }
+
+  /* SKILLS GRID */
+  .skills-grid {
+    grid-template-columns: 1fr; /* Single-column layout */
+    gap: 10px; /* Smaller gap */
+  }
+  .skills-grid div {
+    padding: 10px; /* Reduce padding */
+  }
+  .skills-grid h4 {
+    font-size: 14px; /* Adjust font size */
+  }
+  .skills-grid p {
+    font-size: 12px;
+  }
+
 }
