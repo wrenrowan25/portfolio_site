@@ -2,60 +2,60 @@
 
 /* LIGHT MODE */
 :root {
-  --background-color: #F4F2EE;
-  --button-bg: #00bcd4;
-  --button-hover-bg: #0097a7;
+  --background-color: #F2F2EF;            /* Soft Warm Gray */
+  --button-bg: #E25822;                   /* Burnt Orange */
+  --button-hover-bg: #BF4A1A;             /* Darker Burnt Orange */
   --card-bg: #ffffff;
   --card-border: #ddd;
   --card-hover-bg: #f0f0f0;
   --expanded-bg: #ffffff;
   --expanded-border: #ddd;
-  --heading-color: #222;
-  --no-results-bg: #F4F2EE;
+  --heading-color: #222320;               /* Charcoal Black */
+  --no-results-bg: #F2F2EF;
   --no-results-border: #cccccc;
-  --no-results-color: #555555;
-  --paragraph-color: #666;
+  --no-results-color: #5C5E58;             /* Deep Olive Gray */
+  --paragraph-color: #5C5E58;              /* Deep Olive Gray */
   --resume-bg: #ffffff;
   --resume-border: #ddd;
-  --resume-heading: #222;
-  --resume-text: #666;
+  --resume-heading: #222320;              /* Charcoal Black */
+  --resume-text: #5C5E58;                 /* Deep Olive Gray */
   --search-bg: #ffffff;
   --search-border: #ddd;
-  --tag-active-bg: #0288d1;
-  --tag-active-hover-bg: #0277bd;
-  --tag-bg: #00bcd4;
-  --tag-color: #ffffff;
-  --tag-hover-bg: #0097a7;
-  --text-color: #333;
+  --tag-active-bg: #E25822;               /* Burnt Orange */
+  --tag-active-hover-bg: #BF4A1A;         /* Darker Burnt Orange */
+  --tag-bg: #8B9B77;                      /* Muted Sage Green */
+  --tag-color: #ffffff;                   /* White text for tags */
+  --tag-hover-bg: #6E7D62;                /* Darker Muted Sage Green */
+  --text-color: #222320;                  /* Charcoal Black */
 }
 
 /* DARK MODE */
 [data-theme="dark"] {
-  --background-color: #222;
-  --button-bg: #555;
-  --button-hover-bg: #444;
-  --card-bg: #333;
-  --card-border: #555;
-  --card-hover-bg: #444;
-  --expanded-bg: #333;
-  --expanded-border: #555;
-  --heading-color: #f4f4f9;
-  --no-results-bg: #2c2c2c;
-  --no-results-border: #444444;
-  --no-results-color: #dddddd;
-  --paragraph-color: #ddd;
-  --resume-bg: #333;
-  --resume-border: #555;
-  --resume-heading: #f4f4f9;
-  --resume-text: #ddd;
-  --search-bg: #333;
-  --search-border: #555;
-  --tag-active-bg: #0288d1;
-  --tag-active-hover-bg: #0277bd;
-  --tag-bg: #555;
-  --tag-color: #f4f4f9;
-  --tag-hover-bg: #444;
-  --text-color: #f4f4f9;
+  --background-color: #1E1E1C;            /* Soft Charcoal */
+  --button-bg: #3A3936;                   /* Warm Gray */
+  --button-hover-bg: #323130;             /* Slightly darker Warm Gray */
+  --card-bg: #2A2A28;
+  --card-border: #3A3936;
+  --card-hover-bg: #323130;
+  --expanded-bg: #2A2A28;
+  --expanded-border: #3A3936;
+  --heading-color: #ECECE6;               /* Off-White */
+  --no-results-bg: #1E1E1C;
+  --no-results-border: #3A3936;
+  --no-results-color: #A2A595;             /* Muted Sage */
+  --paragraph-color: #A2A595;             /* Muted Sage */
+  --resume-bg: #2A2A28;
+  --resume-border: #3A3936;
+  --resume-heading: #ECECE6;
+  --resume-text: #A2A595;
+  --search-bg: #2A2A28;
+  --search-border: #3A3936;
+  --tag-active-bg: #E25822;               /* Burnt Orange */
+  --tag-active-hover-bg: #BF4A1A;         /* Darker Burnt Orange */
+  --tag-bg: #627C49;                      /* Dark Moss Green */
+  --tag-color: #ECECE6;                   /* Off-White */
+  --tag-hover-bg: #566A3F;                /* Darker Dark Moss Green */
+  --text-color: #ECECE6;                  /* Off-White */
 }
 
 /* ========== GLOBAL STYLES ========== */
@@ -72,7 +72,7 @@ a {
 body {
   background-color: var(--background-color);
   color: var(--text-color);
-  font-family: "Raleway", sans-serif;
+  font-family: "Inter", sans-serif;
   margin: 0;
   padding: 0;
   transition: background-color 0.3s ease, color 0.3s ease;
@@ -82,23 +82,15 @@ footer {
   height: 300px;
 }
 
-li {
-  color: var(--paragraph-color);
-  cursor: default;
-  font-size: 1rem;
-  margin: 0.5em 0;
-}
-
 ul, ol {
   cursor: default;
   margin: 0 0 1em;
   padding-left: 2em;
 }
 
-
 /* ========== TYPOGRAPHY ========== */
 
-p {
+p, li {
   color: var(--paragraph-color);
   cursor: default;
   font-size: 16px; 
@@ -155,6 +147,7 @@ button {
   cursor: pointer;
   padding: 10px 20px;
   transition: background-color 0.3s ease;
+  font-family: "IBM Plex Mono", monospace;
 }
 
 button:hover {
@@ -163,16 +156,16 @@ button:hover {
 
 /* DARK MODE TOGGLE BUTTON */
 .dark-mode-toggle {
-  background: "var(--button-bg)";
-  color: "var(--text-color)";
-  cursor: "pointer";
-  border: "none";
-  border-radius: "5px";
+  background: var(--button-bg);
+  color: var(--text-color);
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
   padding: 8px 11px;
   position: fixed;
   right: 20px;
   top: 11px;
-  transition: "background-color 0.3s ease";
+  transition: background-color 0.3s ease;
 }
 
 .dark-mode-toggle:hover {
@@ -192,7 +185,7 @@ input, textarea {
 }
 
 input:focus, textarea:focus {
-  border-color: #00bcd4;
+  border-color: #E25822; 
   outline: none;
 }
 
@@ -306,7 +299,7 @@ input:focus, textarea:focus {
 }
 
 .nav-button.active {
-  border-bottom: 2px solid #00bcd4;
+  border-bottom: 2px solid #E25822;
 }
 
 .nav-button:hover {
@@ -365,7 +358,7 @@ input:focus, textarea:focus {
 }
 
 .search-input input:focus {
-    border-color: #00bcd4;
+    border-color: #E25822; 
 }
 
 /*NO RESULTS MESSAGE */
@@ -657,7 +650,6 @@ input:focus, textarea:focus {
 
 /* ========== RESUME SECTION ========== */
 
-
 /* PROFILE CARD */
 .profile-card {
   background: var(--resume-bg);
@@ -672,7 +664,7 @@ input:focus, textarea:focus {
 }
 
 .profile-card:hover {
-transform: scale(1.02); 
+  transform: scale(1.02); 
 }
 
 /* PROFILE BANNER */
@@ -789,7 +781,7 @@ transform: scale(1.02);
   background-color: var(--resume-bg);
   border-radius: 8px;
   height: 50px;
-  margin-top: 11px;;
+  margin-top: 11px;
   object-fit: contain;
   width: 50px;
 }
@@ -1233,5 +1225,4 @@ transform: scale(1.02);
   .skills-grid p {
     font-size: 12px;
   }
-
 }

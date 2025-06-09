@@ -7,9 +7,8 @@ function Navbar({ activeTab, setActiveTab }) {
   const tabs = [
     { id: "web", label: "Web Development", path: "/portfolio/webdev" },
     { id: "software", label: "Software Development", path: "/portfolio/software" },
-    { id: "security", label: "Networking/Security", path: "/portfolio/netsec" },
-    { id: "graphic", label: "Graphic Design", path: "/portfolio/design" },
-    { id: "modeling", label: "3D Modeling", path: "/portfolio/3d" },
+    { id: "security", label: "Cybersecurity", path: "/portfolio/security" },
+    { id: "networking", label: "Networking", path: "/portfolio/networking" },
     { id: "resume", label: "Resume", path: "/resume" },
   ];
 

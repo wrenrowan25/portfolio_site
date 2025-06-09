@@ -1,6 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
-import profilePicture from "../images/pfp.jpg"; 
+import { Link } from "react-router-dom";; 
 
 function IntroScreen({ onClose }) {
   return (
